@@ -1,0 +1,12 @@
+@media print {
+  body {
+    color: black;
+    background: white;
+    //font-size: 12pt;
+  }
+
+  header, footer {
+    display: none;
+  }
+  
+}

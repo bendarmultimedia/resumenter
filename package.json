@@ -1,0 +1,20 @@
+{
+  "name": "cv-tailwind",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "watch": "vite build --watch",
+    "build-prod": "vite build && node export-pdf.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.0",
+    "sass": "^1.70.0",
+    "tailwindcss": "^3.4.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.0",
+    "puppeteer": "^24.12.1",
+    "vite": "^7.0.4"
+  }
+}

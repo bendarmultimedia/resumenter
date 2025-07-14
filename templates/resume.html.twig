@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="{{ cv.lang ? cv.lang : 'en-EN' }}">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ env.APP_URL }}public/css/style.css">
+    <title>{{ cv.name }} – {{ cv.title }}</title>
+</head>
+<body>
+<div class="">
+    <div class="container mx-auto">
+        <div class="grid grid-cols-4 sm:grid-cols-12 gap-0 px-0">
+            <div class="col-span-4 sm:col-span-3">
+                <div class="bg-sky-950 p-2 text-white sidebar print:text-sm">
+                    <div class="flex flex-col pt-3 items-center">
+                        <img src="{{ env.APP_URL }}public/img/PC.png"
+                             class="w-32 h-32 bg-gray-300 rounded-full mb-4">
+
+                        </img>
+                        <h1 class="text-2xl font-bold">{{ cv.name }}</h1>
+                        <p class="">{{ cv.title }}</p>
+                    </div>
+                    <hr class="my-6 border-t border-gray-300">
+                    <div class="flex flex-col">
+                        <span class="text-amber-500 uppercase font-bold tracking-wider mb-2">{{ cv.contact.name }}</span>
+                        {% for contactItem in cv.contact.items %}
+                            <div>
+                                {{ contactItem.icon|raw }}<span class="font-bold">{{ contactItem.title }}</span><br>
+                                {{ contactItem.value|raw }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <hr class="my-6 border-t border-gray-300">
+                    {% for section in cv.sections %}
+                        <div class="flex flex-col my-3">
+                            <span class="text-amber-500 uppercase font-bold tracking-wider mb-2">{{ section.name }}</span>
+                            <div class="mb-2">{{ section.description|raw }}</div>
+                            {% if section.list is defined and section.list|length > 0 %}
+                                <ul>
+                                    {% for item in section.list.items %}
+                                        <li class="mb-1">{{ item|raw }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-span-4 sm:col-span-9">
+                <div class="bg-white p-6">
+                    <h2 class="text-sky-800 text-xl font-bold mb-4">{{ cv.summary.title }}</h2>
+                    <p class="text-sky-950 pb-6">
+                        {{ cv.summary.text|raw }}
+                    </p>
+                    <hr>
+                    <h3 class="text-sky-800 text-xl font-bold mt-4">
+                        {{ cv.links.title }}
+                    </h3>
+                    <div class="flex-col justify-center gap-6 mb-6">
+                        {% for link in cv.links.items %}
+                            <div class="mb-2">
+                                <span class="font-bold">{{ link.title }}</span><br>
+                                <a class="text-gray-700 hover:text-amber-500" aria-label="{{ link.title }}"
+                                   href="{{ link.url }}"
+                                   target="_blank">
+                                    {{ link.url }}
+                                </a> <br>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <hr>
+                    <h2 class="text-sky-800 text-xl font-bold my-4">
+                        {{ cv.experience.title }}
+                    </h2>
+                    {% for position in cv.experience.items %}
+                        <div class="mb-6">
+                            <div class="flex justify-between flex-wrap gap-2 w-full">
+                                <span class="text-gray-700 font-bold">{{ position.position }}</span>
+                                <p>
+                                    <span class="text-amber-500 font-bold mr-2">{{ position.company }}</span>
+                                    <span class="text-sky-800">{{ position.period }}</span>
+                                </p>
+                            </div>
+                            <p class="mt-2">
+                                {{ position.description|raw }}
+                            </p>
+                        </div>
+                    {% endfor %}
+                    <hr>
+                    <h2 class="text-sky-800 text-xl font-bold my-4">
+                        {{ cv.education.title }}
+                    </h2>
+                    {% for position in cv.education.items %}
+                        <div class="mb-6">
+                            <div class="flex justify-between flex-wrap gap-2 w-full">
+                                <span class="text-gray-700 font-bold">{{ position.position }}</span>
+                                <p>
+                                    <span class="text-amber-500 font-bold mr-2">{{ position.school }}</span>
+                                    <span class="text-sky-800">{{ position.period }}</span>
+                                </p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <hr>
+                    <p class="text-gray-500 text-sm my-4 text-justify">{{ cv.legalInfo }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
