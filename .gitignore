@@ -3,3 +3,9 @@ public/img/PC.png
 public/resume/*
 data/job_positions/
 !data/job_positions/job_example.json
+
+node_modules
+vendor
+package-lock.json
+composer.lock
+temp
