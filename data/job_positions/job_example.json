@@ -1,0 +1,91 @@
+{
+  "language": "en-EN",
+  "name": "John Smith",
+  "title": "wordpress developer",
+  "summary": {
+    "title": "About Me",
+    "text": "Short bio."
+  },
+  "links": {
+    "title": "Find me on:",
+    "items": [
+      {
+        "title": "LinkedIn:",
+        "url": "https://www.linkedin.com/in/login/"
+      },
+      {
+        "title": "GitHub:",
+        "url": "https://github.com/login/"
+      },
+      {
+        "title": "StackOverflow:",
+        "url": "https://stackoverflow.com/users/2137/login/"
+      }
+    ]
+  },
+  "contact": {
+    "name": "Contact",
+    "items": [
+      {
+        "icon": "",
+        "title": "Address:",
+        "value": "Warsaw, Poland"
+      },
+      {
+        "icon": "",
+        "title": "Phone:",
+        "value": "<a href=\"tel:+48123123123\">+48 123 123 132</a>"
+      },
+      {
+        "icon": "",
+        "title": "eMail:",
+        "value": "<a href=\"mailto:example@domain.com\">example@domain.com</a>"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "name": "Languages",
+      "list": {
+        "items": [
+          "<b>Polish</b>  - native",
+          "<b>English</b> - B2"
+        ]
+      }
+    },
+    {
+      "name": "Programming",
+      "description": "PHP 7/8, MySQL, MSSQL, JS, jQuery, Vue 2/3, Twig, WPQuery, GIT, CSS, SASS, Tailwind, Bootstrap"
+    },
+    {
+      "name": "WP techs",
+      "description": "Elementor API, WP REST API, wp-cron, CPT, translations, template system, hooks, object cache"
+    },
+    {
+      "name": "WP Plugins",
+      "description": "Elementor, Avada, Contact Forms, Woocommerce, LiteSpeed, Smush, SliderRevolution, Jetpack, CookieYes, Wordfence"
+    }
+  ],
+  "experience": {
+    "title": "Work History:",
+    "items": [
+      {
+        "company": "Company 1, [Cracow]",
+        "position": "Senior Web Developer",
+        "period": "03.2025 - present",
+        "description": "Responsibilities description."
+      }
+    ]
+  },
+  "education": {
+    "title": "Education:",
+    "items": [
+      {
+        "school": "Super School",
+        "position": "Bachelor of Science: Game Designer",
+        "period": "10.2021 - 06.2024"
+      }
+    ]
+  },
+  "legalInfo": "I agree to the processing of personal data provided in this document for realising the recruitment process pursuant to the Personal Data Protection Act of 10 May 2018 (Journal of Laws 2018, item 1000) and in agreement with Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation)."
+}

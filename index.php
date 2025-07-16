@@ -10,7 +10,7 @@ $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
 $job = $_GET['job'] ?? 'web_developer';
-$dataPath = __DIR__ . "/data/job_positions/{$job}.json";
+$dataPath = __DIR__ . "{$_ENV['DATA_PATH']}/{$job}.json";
 
 if (!file_exists($dataPath)) {
     http_response_code(404);
