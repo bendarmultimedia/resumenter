@@ -1,0 +1,8 @@
+@media screen {
+  body {
+    @apply flex-col justify-items-center bg-slate-600 py-3 w-full
+  }
+  .resume-page {
+    @apply mt-6 my-4 shadow-xl bg-white overflow-hidden rounded-md container
+  }
+}

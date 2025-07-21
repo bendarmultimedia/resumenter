@@ -1,12 +1,22 @@
 @media print {
+  html, body,* {
+    margin: 0;
+    padding: 0;
+  }
+  @page {
+    margin: 0;
+    padding: 0;
+  }
   body {
     color: black;
-    background: white;
-    //font-size: 12pt;
+    font-size: 12pt;
   }
 
   header, footer {
     display: none;
   }
-  
+
+  .resume-page {
+    @apply h-[297mm] w-full my-4 m-0 p-0
+  }
 }

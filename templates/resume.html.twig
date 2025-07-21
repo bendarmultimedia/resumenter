@@ -5,15 +5,16 @@
     <link rel="stylesheet" href="{{ env.APP_URL }}public/css/style.css">
     <title>{{ cv.name }} – {{ cv.title }}</title>
 </head>
-<body>
-<div class="">
-    <div class="container mx-auto">
-        <div class="grid grid-cols-4 sm:grid-cols-12 gap-0 px-0">
-            <div class="col-span-4 sm:col-span-3">
-                <div class="bg-sky-950 p-2 text-white sidebar print:text-sm">
+<body class="h-full px-0">
+{# PAGE 1 #}
+<div class="resume-page p-0 m-0 page-1 bg-white overflow-hidden">
+    <div class="mx-0 h-full">
+        <div class="grid grid-cols-4 sm:grid-cols-12 gap-0 px-0 h-full">
+            <div class="col-span-4 sm:col-span-3 p-0 m-0">
+                <div class="bg-sky-950 py-2 px-3 text-white sidebar print:text-sm h-full">
                     <div class="flex flex-col pt-3 items-center">
                         <img src="{{ env.APP_URL }}public/img/PC.png"
-                             class="w-32 h-32 bg-gray-300 rounded-full mb-4" alt="avatar" />
+                             class="w-32 h-32 bg-gray-300 rounded-full mb-4" alt="avatar"/>
 
                         <h1 class="text-2xl font-bold">{{ cv.name }}</h1>
                         <p class="">{{ cv.title }}</p>
@@ -29,7 +30,7 @@
                         {% endfor %}
                     </div>
                     <hr class="my-6 border-t border-gray-300">
-                    {% for section in cv.sections %}
+                    {% for section in cv.sections[0] %}
                         <div class="flex flex-col my-3">
                             <span class="text-amber-500 uppercase font-bold tracking-wider mb-2">{{ section.name }}</span>
                             <div class="mb-2">{{ section.description|raw }}</div>
@@ -44,17 +45,17 @@
                     {% endfor %}
                 </div>
             </div>
-            <div class="col-span-4 sm:col-span-9">
-                <div class="bg-white p-6">
-                    <h2 class="text-sky-800 text-xl font-bold mb-4">{{ cv.summary.title }}</h2>
-                    <p class="text-sky-950 pb-6">
+            <div class="col-span-4 sm:col-span-9 ">
+                <div class="px-6 py-4">
+                    <h2 class="text-sky-800 text-xl font-bold mb-2">{{ cv.summary.title }}</h2>
+                    <p class="text-sky-950 mb-4">
                         {{ cv.summary.text|raw }}
                     </p>
                     <hr>
-                    <h3 class="text-sky-800 text-xl font-bold mt-4">
+                    <h3 class="text-sky-800 text-xl font-bold mt-2">
                         {{ cv.links.title }}
                     </h3>
-                    <div class="flex-col justify-center gap-6 mb-6">
+                    <div class="flex-col justify-center gap-6 mb-4">
                         {% for link in cv.links.items %}
                             <div class="mb-2">
                                 <span class="font-bold">{{ link.title }}</span><br>
@@ -67,42 +68,122 @@
                         {% endfor %}
                     </div>
                     <hr>
-                    <h2 class="text-sky-800 text-xl font-bold my-4">
+                    <h2 class="text-sky-800 text-xl font-bold mt-2 mb-1">
                         {{ cv.experience.title }}
                     </h2>
                     {% for position in cv.experience.items %}
-                        <div class="mb-6">
-                            <div class="flex justify-between flex-wrap gap-2 w-full">
+                        <div class="mb-3">
+                            <div class="w-full">
                                 <span class="text-gray-700 font-bold">{{ position.position }}</span>
-                                <p>
+                                <p class="m-0">
                                     <span class="text-amber-500 font-bold mr-2">{{ position.company }}</span>
                                     <span class="text-sky-800">{{ position.period }}</span>
                                 </p>
                             </div>
-                            <p class="mt-2">
+                            <p class="m-0">
                                 {{ position.description|raw }}
                             </p>
                         </div>
                     {% endfor %}
-                    <hr>
-                    <h2 class="text-sky-800 text-xl font-bold my-4">
-                        {{ cv.education.title }}
-                    </h2>
-                    {% for position in cv.education.items %}
-                        <div class="mb-6">
-                            <div class="flex justify-between flex-wrap gap-2 w-full">
-                                <span class="text-gray-700 font-bold">{{ position.position }}</span>
-                                <p>
-                                    <span class="text-amber-500 font-bold mr-2">{{ position.school }}</span>
-                                    <span class="text-sky-800">{{ position.period }}</span>
-                                </p>
-                            </div>
-                        </div>
-                    {% endfor %}
-                    <hr>
-                    <p class="text-gray-500 text-sm my-4 text-justify">{{ cv.legalInfo }}</p>
+                    {#                    <hr class="break-after-page"> #}
+                    {#                    <h2 class="text-sky-800 text-xl font-bold mt-2 mb-1"> #}
+                    {#                        {{ cv.education.title }} #}
+                    {#                    </h2> #}
+                    {#                    {% for position in cv.education.items %} #}
+                    {#                        <div class="mb-6"> #}
+                    {#                            <div class="flex justify-between flex-wrap gap-2 w-full"> #}
+                    {#                                <span class="text-gray-700 font-bold">{{ position.position }}</span> #}
+                    {#                                <p> #}
+                    {#                                    <span class="text-amber-500 font-bold mr-2">{{ position.school }}</span> #}
+                    {#                                    <span class="text-sky-800">{{ position.period }}</span> #}
+                    {#                                </p> #}
+                    {#                            </div> #}
+                    {#                        </div> #}
+                    {#                    {% endfor %} #}
+                    {#                    <hr> #}
+                    {#                    <p class="text-gray-500 text-sm my-4 text-justify">{{ cv.legalInfo }}</p> #}
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+{# PAGE 2 #}
+<div class="resume-page h-[297mm] p-0 m-0 page-2 bg-white break-before-all overflow-hidden my-2">
+    <div class="mx-0 h-full">
+        <div class="grid grid-cols-4 sm:grid-cols-12 gap-0 px-0 h-full">
+            <div class="col-span-4 sm:col-span-9 ">
+                <div class="px-6 py-4 h-full flex flex-col justify-between">
+                    <div>
+
+                        <h2 class="text-sky-800 text-xl font-bold mt-2 mb-1">
+                            {{ cv.education.title }}
+                        </h2>
+                        {% for position in cv.education.items %}
+                            <div class="mb-6">
+                                <div class="flex justify-between flex-wrap gap-2 w-full">
+                                    <span class="text-gray-700 font-bold">{{ position.position }}</span>
+                                    <p>
+                                        <span class="text-amber-500 font-bold mr-2">{{ position.school }}</span>
+                                        <span class="text-sky-800">{{ position.period }}</span>
+                                    </p>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        <hr>
+                        <div class=" py-4">
+                            <h2 class="text-sky-800 text-xl font-bold mt-2 mb-1">
+                                {{ cv.courses.title }}
+                            </h2>
+                            <ul>
+                                {% for course in cv.courses.items %}
+                                    <li><span class="text-amber-500 font-bold">[{{ course.date }}]</span> {{ course.name }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="self-end">
+                        <hr>
+                        <p class="text-gray-500 text-sm my-4 text-justify">{{ cv.legalInfo }}</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-4 sm:col-span-3 p-0 h-full">
+                <div class="bg-sky-950 h-[297mm] py-2 px-3 text-white sidebar print:text-sm">
+                    <div class="flex flex-col pt-3 items-center">
+                        <img src="{{ env.APP_URL }}public/img/PC.png"
+                             class="w-32 h-32 bg-gray-300 rounded-full mb-4" alt="avatar"/>
+
+                        <h1 class="text-2xl font-bold">{{ cv.name }}</h1>
+                        <p class="">{{ cv.title }}</p>
+                    </div>
+                    <hr class="my-6 border-t border-gray-300">
+                    <div class="flex flex-col">
+                        <span class="text-amber-500 uppercase font-bold tracking-wider mb-2">{{ cv.contact.name }}</span>
+                        {% for contactItem in cv.contact.items %}
+                            <div>
+                                {{ contactItem.icon|raw }}<span class="font-bold">{{ contactItem.title }}</span><br>
+                                {{ contactItem.value|raw }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <hr class="my-6 border-t border-gray-300">
+                    {% for section in cv.sections[1] %}
+                        <div class="flex flex-col my-3">
+                            <span class="text-amber-500 uppercase font-bold tracking-wider mb-2">{{ section.name }}</span>
+                            <div class="mb-2">{{ section.description|raw }}</div>
+                            {% if section.list is defined and section.list|length > 0 %}
+                                <ul>
+                                    {% for item in section.list.items %}
+                                        <li class="mb-1">{{ item|raw }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
         </div>
     </div>
 </div>

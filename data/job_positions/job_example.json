@@ -44,27 +44,29 @@
     ]
   },
   "sections": [
-    {
-      "name": "Languages",
-      "list": {
-        "items": [
-          "<b>Polish</b>  - native",
-          "<b>English</b> - B2"
-        ]
+    [
+      {
+        "name": "Languages",
+        "list": {
+          "items": [
+            "<b>Polish</b>  - native",
+            "<b>English</b> - B2"
+          ]
+        }
+      },
+      {
+        "name": "Programming",
+        "description": "PHP 7/8, MySQL, MSSQL, JS, jQuery, Vue 2/3, Twig, WPQuery, GIT, CSS, SASS, Tailwind, Bootstrap"
+      },
+      {
+        "name": "WP techs",
+        "description": "Elementor API, WP REST API, wp-cron, CPT, translations, template system, hooks, object cache"
+      },
+      {
+        "name": "WP Plugins",
+        "description": "Elementor, Avada, Contact Forms, Woocommerce, LiteSpeed, Smush, SliderRevolution, Jetpack, CookieYes, Wordfence"
       }
-    },
-    {
-      "name": "Programming",
-      "description": "PHP 7/8, MySQL, MSSQL, JS, jQuery, Vue 2/3, Twig, WPQuery, GIT, CSS, SASS, Tailwind, Bootstrap"
-    },
-    {
-      "name": "WP techs",
-      "description": "Elementor API, WP REST API, wp-cron, CPT, translations, template system, hooks, object cache"
-    },
-    {
-      "name": "WP Plugins",
-      "description": "Elementor, Avada, Contact Forms, Woocommerce, LiteSpeed, Smush, SliderRevolution, Jetpack, CookieYes, Wordfence"
-    }
+    ]
   ],
   "experience": {
     "title": "Work History:",

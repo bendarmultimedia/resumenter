@@ -3,7 +3,8 @@ module.exports = {
   content: [
     './templates/**/*.{html,twig}',
     './index.php',
-    './data/**/*.json'
+    './data/**/*.json',
+    './src/styles/**/*.scss'
   ],
   theme: {
     extend: {},
