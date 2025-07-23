@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ cv.lang ? cv.lang : 'en-EN' }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="{{ env.APP_URL }}public/css/style.css">
+    <title>Resume list</title>
+</head>
+<body class="h-full w-full">
+<div class="container my-6 ">
+    <h1 class="text-2xl font-bold mb-2 text-amber-500">Resume list</h1>
+    <div class="bg-white p-4 rounded-xl shadow-black/60 shadow-lg ">
+        <ul>
+            {% for job in jobs %}
+                <li><a href="{{ env.ROUTE_PREFIX }}/{{ job }}/"
+                       class="underline text-sky-950 hover:text-amber-700">{{ job }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

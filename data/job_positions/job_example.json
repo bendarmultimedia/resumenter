@@ -1,25 +1,25 @@
 {
   "language": "en-EN",
   "name": "John Smith",
-  "title": "wordpress developer",
+  "title": "developer",
   "summary": {
     "title": "About Me",
-    "text": "Short bio."
+    "text": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec rhoncus imperdiet odio sed molestie. Vivamus egestas ex vel tristique eleifend. Nunc laoreet, est vel posuere rhoncus, lacus mi feugiat turpis, vestibulum imperdiet diam nibh id leo. Duis ac sapien elit. Vivamus pretium, dui molestie iaculis pulvinar, arcu erat sodales sapien, non hendrerit sem ex ac odio. Cras sed libero risus. Vestibulum a ante et velit fermentum rutrum vitae sit amet elit. Morbi semper nulla velit."
   },
   "links": {
     "title": "Find me on:",
     "items": [
       {
         "title": "LinkedIn:",
-        "url": "https://www.linkedin.com/in/login/"
+        "url": "https://www.linkedin.com/in/profile/"
       },
       {
         "title": "GitHub:",
-        "url": "https://github.com/login/"
+        "url": "https://github.com/profile/"
       },
       {
         "title": "StackOverflow:",
-        "url": "https://stackoverflow.com/users/2137/login/"
+        "url": "https://stackoverflow.com/profile/"
       }
     ]
   },
@@ -49,22 +49,32 @@
         "name": "Languages",
         "list": {
           "items": [
-            "<b>Polish</b>  - native",
-            "<b>English</b> - B2"
+            "<b>French</b>  - native",
+            "<b>English</b> - A1"
           ]
         }
       },
       {
-        "name": "Programming",
-        "description": "PHP 7/8, MySQL, MSSQL, JS, jQuery, Vue 2/3, Twig, WPQuery, GIT, CSS, SASS, Tailwind, Bootstrap"
+        "name": "Programming skills",
+        "description": "PHP 8, SQL, JS, Twig, Vue.js, SASS, C#, Python"
       },
       {
-        "name": "WP techs",
-        "description": "Elementor API, WP REST API, wp-cron, CPT, translations, template system, hooks, object cache"
+        "name": "Libraries",
+        "description": "Puppeteer, dotenv, SASS, Django, Vuetify, Vuelidate"
       },
       {
-        "name": "WP Plugins",
-        "description": "Elementor, Avada, Contact Forms, Woocommerce, LiteSpeed, Smush, SliderRevolution, Jetpack, CookieYes, Wordfence"
+        "name": "Soft skills",
+        "description": "Problem-solving, Communication, Teamwork, Adaptability, Leadership, Work ethic"
+      }
+    ],
+    [
+      {
+        "name": "Daily technologies",
+        "description": "FTP, SSH, GIT, Jira, BitBucket, GitHub, Docker, Kubernetes, WSL, REDIS "
+      },
+      {
+        "name": "Daily software",
+        "description": "VS Code, Notepad++, SQL Server, Win 11, MS Teams, Chat GPT, Postman"
       }
     ]
   ],
@@ -72,10 +82,22 @@
     "title": "Work History:",
     "items": [
       {
-        "company": "Company 1, [Cracow]",
-        "position": "Senior Web Developer",
-        "period": "03.2025 - present",
-        "description": "Responsibilities description."
+        "company": "Company 2, [Warsaw]",
+        "position": "Developer",
+        "period": "01.2020 - present",
+        "description": "Aenean non varius justo. Quisque eget elementum dui, id aliquam diam. Donec ornare augue augue, vel viverra augue dapibus id. Nunc hendrerit suscipit hendrerit. Aenean ultrices sem pellentesque enim pretium vehicula. Nulla eget pellentesque nunc. Sed est felis, facilisis sed."
+      },
+      {
+        "company": "Company 1, [Gdańsk]",
+        "position": "Developer",
+        "period": "10.2018 - 12.2020",
+        "description": "Praesent tempus ex iaculis, pulvinar eros eleifend, pharetra elit. Integer aliquet eleifend sapien, lacinia posuere dolor aliquam nec. Cras euismod, sem a tincidunt suscipit, nulla orci dapibus nunc, ac consectetur sem diam varius justo. In mollis."
+      },
+      {
+        "company": "Company 1 [Gdańsk]",
+        "position": "Junior Developer",
+        "period": "07.2015 - 10.2018",
+        "description": "\n\nIn varius, sem quis gravida egestas, augue erat eleifend tortor, sit amet vestibulum dui dui quis nisi. Aenean fermentum erat magna, nec scelerisque nulla porttitor quis. Proin dapibus augue nisl, ut varius elit dapibus non. Nunc lacinia turpis."
       }
     ]
   },
@@ -83,9 +105,35 @@
     "title": "Education:",
     "items": [
       {
-        "school": "Super School",
-        "position": "Bachelor of Science: Game Designer",
-        "period": "10.2021 - 06.2024"
+        "school": "Gdańsk University of Technology [Gdańsk]",
+        "position": "Master's Degree in Computer Science",
+        "period": "2012 - 2014"
+      },
+      {
+        "school": "Wyższa Szkoła Bankowa W Gdańsku [Gdańsk]",
+        "position": "Bachelor Degree in Computer Science",
+        "period": "2008 - 2012"
+      }
+    ]
+  },
+  "courses": {
+    "title": "Courses:",
+    "items": [
+      {
+        "name": "Vue masterclass"   ,
+        "date": "19.04.2014"
+      },
+      {
+        "name": "Modern apps in JavaScript"   ,
+        "date": "12.09.2016"
+      },
+      {
+        "name": "GIT for everyone"   ,
+        "date": "24.03.2021"
+      },
+      {
+        "name": "Safe RESTful APIs"   ,
+        "date": "02.11.2020"
       }
     ]
   },
