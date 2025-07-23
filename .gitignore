@@ -11,3 +11,4 @@ temp
 .env
 .env.local
 .idea
+.composer-lock
