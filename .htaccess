@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Wyłącz przetwarzanie istniejących plików i katalogów
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Przekieruj wszystko do index.php
+RewriteRule ^(.*)$ index.php [QSA,L]

@@ -1,9 +1,9 @@
 module.exports = {
   darkMode: 'class',
   content: [
-    './templates/**/*.{html,twig}',
-    './index.php',
-    './data/**/*.json',
+    './../templates/**/*.{html,twig}',
+    './../index.php',
+    './../data/**/*.json',
     './src/styles/**/*.scss'
   ],
   theme: {

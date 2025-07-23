@@ -1,5 +1,5 @@
 {
-  "name": "cv-tailwind",
+  "name": "resumenter",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

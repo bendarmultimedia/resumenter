@@ -3,10 +3,11 @@ public/img/PC.png
 public/resume/*
 data/job_positions/**/
 
-node_modules
 vendor
-package-lock.json
-composer.lock
+js/node_modules
+js/package-lock.json
+js/composer.lock
 temp
 .env
 .env.local
+.idea

@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config({ path: '../.env' });
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 const path = require('path');
@@ -12,7 +12,7 @@ const baseUrl = process.env.APP_URL;
     const page = await browser.newPage();
     const url = `${baseUrl}?job=${job}`;
     await page.goto(url, { waitUntil: 'networkidle0' });
-    const outputPath = path.resolve(__dirname, `public/resume/${job}.pdf`);
+    const outputPath = path.resolve(__dirname, `../public/resume/${job}.pdf`);
     await page.pdf({
       path: outputPath,
       format: 'A4',

@@ -4,7 +4,7 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   root: '.',
   build: {
-    outDir: 'public/css',
+    outDir: '../public/css',
     emptyOutDir: true,
     rollupOptions: {
       input: {
