@@ -73,9 +73,9 @@ The class ***Router*** rewrites parameters for friendly URLs. The rules for http
 In this project I'd like to show some different technologies mixed together.
 
 For PDF files, a different solution could be used to stick to one backend technology. You could use [mPDF](https://github.com/mpdf/mpdf) or [wkhtmltopdf](https://wkhtmltopdf.org/).
-
 Experience with these technologies has shown that there are sometimes problems with correct CSS rendering.
 For a larger project, I would probably choose one of these.
+
 ---
 
 ## 📈 What could be better?
