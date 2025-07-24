@@ -13,5 +13,5 @@ temp
 .idea
 .composer-lock
 templates/resume.dev.html.twig
-.idea/
+.idea/*
 .phpunit*
