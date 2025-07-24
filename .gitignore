@@ -10,8 +10,7 @@ composer.lock
 temp
 .env
 .env.local
-.idea
+.idea*
 .composer-lock
 templates/resume.dev.html.twig
-.idea/
 .phpunit*
