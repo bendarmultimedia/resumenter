@@ -8,7 +8,10 @@
 </head>
 <body class="h-full px-0">
 <div class="print:hidden container sticky top-1 mt-3">
-<button onClick="window.print()" class="print:hidden px-5 py-1 rounded-sm bg-amber-500 text-teal-950 hover:bg-amber-300 hover:text-sky-800">Print</button>
+    <button onClick="window.print()"
+            class="print:hidden px-5 py-1 rounded-sm bg-amber-500 text-teal-950 hover:bg-amber-300 hover:text-sky-800">
+        Print
+    </button>
 </div>
 {# PAGE 1 #}
 <div class="resume-page p-0 page-1 bg-white overflow-hidden">
@@ -123,7 +126,9 @@
                             </h2>
                             <ul>
                                 {% for course in cv.courses.items %}
-                                    <li><span class="text-emerald-500 font-bold">[{{ course.date }}]</span> {{ course.name }}</li>
+                                    <li>
+                                        <span class="text-emerald-500 font-bold">[{{ course.date }}]</span> {{ course.name }}
+                                    </li>
                                 {% endfor %}
                             </ul>
                         </div>

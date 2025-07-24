@@ -4,53 +4,51 @@ namespace Resumenter\Controller;
 
 use DateTime;
 use Resumenter\Exception\NotFoundException;
-
 use Throwable;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
-final class ResumeController implements ControllerInterface
+
+class ResumeController implements ControllerInterface
 {
-       private Environment $twig;
 
     /**
+     * @param Environment $twig
      * @param array $jobs
      */
-    public function __construct(private array $jobs = [])
+    public function __construct(readonly private Environment $twig, private array $jobs = [])
     {
-        $loader = new FilesystemLoader(__DIR__ . '/../../templates');
         $this->jobs[] = '';
-        $this->twig = new Environment($loader);
     }
 
     /**
      * @param string $path
      * @param array|null $arguments
+     * @return string
      * @throws NotFoundException
      */
-    public function render(string $path, ?array $arguments = []): void
+    public function render(string $path, ?array $arguments = []): string
     {
         if (!in_array($path, $this->jobs)) {
             throw new NotFoundException($path);
         }
 
-        if($this->isIndex($path)) {
-            $this->renderIndex();
-            return;
+        if ($this->isIndex($path)) {
+            return $this->renderIndex();
         }
-        $this->renderResume($path, $arguments);
+        return $this->renderResume($path, $arguments);
     }
 
     /**
      * @param string $path
      * @param array|null $arguments
-     * @return array|null
+     * @return string
      */
-    public function renderResume(string $path, ?array $arguments): ?array
+    public function renderResume(string $path, ?array $arguments): string
     {
         $data = count($arguments) > 0 ? $arguments : $this->getJob($path);
         $this->sortCourses($data);
         try {
-            echo $this->twig->render(
+            return $this->twig->render(
                 'resume.html.twig',
                 [
                     'cv'  => $data,
@@ -59,24 +57,41 @@ final class ResumeController implements ControllerInterface
         } catch (Throwable $e) {
             echo 'Error ' . $e->getCode() . ': ' . $e->getMessage();
         }
-        return $data;
+        return '';
     }
 
     /**
+     * @param array $data
      * @return void
      */
-    private function renderIndex(): void
+    public function sortCourses(array &$data): void
+    {
+        if (is_array($data['courses']) && count($data['courses']) > 0) {
+
+            usort($data['courses']['items'], function ($a, $b) {
+                $dateA = DateTime::createFromFormat('d.m.Y', $a['date']);
+                $dateB = DateTime::createFromFormat('d.m.Y', $b['date']);
+                return $dateB <=> $dateA;
+            });
+        }
+    }
+
+    /**
+     * @return string
+     */
+    private function renderIndex(): string
     {
         try {
-            echo $this->twig->render(
+            return $this->twig->render(
                 'index.html.twig',
                 [
-                    'jobs'  => $this->jobs,
-                    'env' => $_ENV,
+                    'jobs' => $this->jobs,
+                    'env'  => $_ENV,
                 ]);
         } catch (Throwable $e) {
             echo 'Error ' . $e->getCode() . ': ' . $e->getMessage();
         }
+        return '';
     }
 
     /**
@@ -87,19 +102,6 @@ final class ResumeController implements ControllerInterface
     {
         $dataPath = __DIR__ . "/../..{$_ENV['DATA_PATH']}/$job.json";
         return json_decode(file_get_contents($dataPath), true);
-    }
-
-    /**
-     * @param array $data
-     * @return void
-     */
-    private function sortCourses(array &$data): void
-    {
-        usort($data['courses']['items'], function ($a, $b) {
-            $dateA = DateTime::createFromFormat('d.m.Y', $a['date']);
-            $dateB = DateTime::createFromFormat('d.m.Y', $b['date']);
-            return $dateB <=> $dateA;
-        });
     }
 
     /**

@@ -6,6 +6,10 @@ use Throwable;
 
 final class FileLocator
 {
+    /**
+     * @param string $path
+     * @return array
+     */
     public function getFileList(string $path): array
     {
         $folderInfo = $this->scanDir($path);
@@ -15,6 +19,10 @@ final class FileLocator
         });
     }
 
+    /**
+     * @param string $path
+     * @return array
+     */
     private function scanDir(string $path): array
     {
         try {
@@ -25,6 +33,10 @@ final class FileLocator
         }
     }
 
+    /**
+     * @param string $path
+     * @return array
+     */
     public function getFileNames(string $path): array
     {
         $files = $this->getFileList($path);

@@ -1,6 +1,6 @@
 <?php
 
-NameSpace Resumenter;
+namespace Resumenter;
 
 use JetBrains\PhpStorm\NoReturn;
 use Resumenter\Controller\ControllerInterface;
@@ -14,32 +14,33 @@ final class Router
      * @param array $routes
      * @param string|null $routePrefix
      */
-    public function __construct(public ControllerInterface $controller, public array $routes = [], public ?string $routePrefix = '')
+    public function __construct(
+        public ControllerInterface $controller,
+        public array               $routes = [],
+        public ?string             $routePrefix = ''
+    )
     {
     }
 
-
     /**
-     * @return void
+     * @return string
      */
-    public function handleRequest(): void
+    public function handleRequest(): string
     {
         $requestedUri = $_SERVER['REQUEST_URI'];
         $path = $this->path($requestedUri);
 
         if (!isset($_GET[self::PAGE_PARAM])) {
-            if (in_array($path,  $this->routes)) {
-                $this->renderPage($path);
+            if (in_array($path, $this->routes)) {
+                return $this->renderPage($path);
             } else {
-                $this->render404();
+                return $this->render404();
             }
-            return;
         }
 
         $page = $_GET[self::PAGE_PARAM] ?? '';
         if (!in_array($page, $this->routes)) {
-            $this->render404();
-            return;
+            return $this->render404();
         }
 
         $this->redirectToPath($page);
@@ -53,27 +54,27 @@ final class Router
     private function redirectToPath(string $page): void
     {
         $slash = $page === '' ? '' : '/';
-        $queryUrl = $this->routePrefix.'/'. rtrim($page,"/").$slash;
+        $queryUrl = $this->routePrefix . '/' . rtrim($page, "/") . $slash;
         header("Location: $queryUrl", true, 302);
         exit;
     }
 
     /**
      * @param string $page
-     * @return void
+     * @return string
      */
-    private function renderPage(string $page): void
+    private function renderPage(string $page): string
     {
-        $this->controller->render($page, []);
+        return $this->controller->render($page, []);
     }
 
     /**
-     * @return void
+     * @return string
      */
-    private function render404(): void
+    private function render404(): string
     {
         http_response_code(404);
-        echo "<h1>404 Not Found</h1><p>The page you requested does not exist.</p>";
+        return "<h1>404 Not Found</h1><p>The page you requested does not exist.</p>";
     }
 
     /**

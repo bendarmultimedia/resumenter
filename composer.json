@@ -11,10 +11,10 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Tests\\": "tests/"
+      "Resumenter\\Tests\\": "tests/"
     }
   },
   "require-dev": {
-    "phpunit/phpunit": "^10.0"
+    "phpunit/phpunit": "^10.5"
   }
 }
