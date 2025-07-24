@@ -77,6 +77,7 @@ For PDF files, a different solution could be used to stick to one backend techno
 Experience with these technologies has shown that there are sometimes problems with correct CSS rendering.
 For a larger project, I would probably choose one of these.
 ---
+
 ## 📈 What could be better?
 This is simple example of using multiple web techniques like **PHP**, **JavaScript**, **Node**, **Apache**, ***SCSS***, **TailwindCSS** and **Twig**.
 The templates could be inherited and more optimized in accordance with DRY methodology, but maybe there will be an update in the future.😀
