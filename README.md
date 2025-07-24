@@ -2,7 +2,7 @@
 A simple script that allows you to create a resume based on data stored in .json files
 You can add different versions of resumes on one template easily print them or export them to PDF. The library comes in handy for applying for various positions, where the priority of skills depends on the job position.
 
-![thumbnail](https://raw.githubusercontent.com/bendarmultimedia/resumenter/refs/heads/master/public/img/thumbnail.png?token=GHSAT0AAAAAADGB5LFXCUVMUYRDGFD72RPE2ECMD7Q)
+![thumbnail](https://github.com/bendarmultimedia/resumenter/blob/master/public/img/thumbnail.png?raw=true)
 
 ---
 ## 🛠️ Requirements
