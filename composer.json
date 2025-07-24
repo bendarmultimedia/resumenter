@@ -1,5 +1,10 @@
 {
+  "name": "bendarmultimedia/resumenter",
+  "description": "A PHP + Vite + TailwindCSS app for generating Resumes with Twig templates.",
+  "type": "project",
+  "license": "MIT",
   "require": {
+    "php": "^8.2",
     "twig/twig": "^3.21",
     "vlucas/phpdotenv": "^5.6",
     "ext-json": "*"

@@ -1,5 +1,18 @@
 {
   "name": "resumenter",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bendarmultimedia/resumenter.git"
+  },
+  "keywords": [
+    "php",
+    "tailwind",
+    "node",
+    "twig",
+    "template",
+    "resume",
+    "vite"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
