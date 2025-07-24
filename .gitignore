@@ -6,7 +6,7 @@ data/job_positions/**/
 vendor
 js/node_modules
 js/package-lock.json
-js/composer.lock
+composer.lock
 temp
 .env
 .env.local
@@ -14,3 +14,4 @@ temp
 .composer-lock
 templates/resume.dev.html.twig
 .idea/
+.phpunit*
