@@ -14,7 +14,7 @@ $loader = new FilesystemLoader(__DIR__ . '/templates');
 $dotenv->load();
 $routes = (new FileLocator())->getFileNames(__DIR__ . $_ENV['DATA_PATH']);
 $routes[] = '';
-$resumeCreator = new ResumeController((new Environment($loader)), $routes);
+$resumeCreator = new ResumeController((new Environment($loader)), $_ENV['RESUME_TEMPLATE'], $routes);
 $router = new Router($resumeCreator, $routes, $_ENV['ROUTE_PREFIX']);
 
 echo $router->handleRequest();

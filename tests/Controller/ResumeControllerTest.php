@@ -1,10 +1,9 @@
 <?php
 
-namespace Resumenter\Tests\Controller;
+namespace Tests\Controller;
 
 use PHPUnit\Framework\MockObject\Exception;
 use PHPUnit\Framework\TestCase;
-use ReflectionException;
 use Resumenter\Controller\ResumeController;
 use Resumenter\Exception\NotFoundException;
 use Twig\Environment;
@@ -12,6 +11,7 @@ use Twig\Environment;
 class ResumeControllerTest extends TestCase
 {
     private Environment $twig;
+    private string $template = 'resume.html.twig';
 
     /**
      * @throws Exception
@@ -32,7 +32,7 @@ class ResumeControllerTest extends TestCase
             ->with('index.html.twig', $this->arrayHasKey('jobs'))
             ->willReturn('rendered index');
 
-        $controller = new ResumeController($this->twig, ['job1']);
+        $controller = new ResumeController($this->twig, $this->template, ['job1']);
         $result = $controller->render('');
         $this->assertEquals('rendered index', $result);
     }
@@ -44,13 +44,13 @@ class ResumeControllerTest extends TestCase
     {
         $this->twig->expects($this->once())
             ->method('render')
-            ->with('resume.html.twig', $this->callback(function ($context) {
+            ->with($this->template, $this->callback(function ($context) {
                 return isset($context['cv']) &&
                     $context['cv']['courses']['items'][0]['date'] === '01.01.2023';
             }))
             ->willReturn('rendered resume');
 
-        $controller = new ResumeController($this->twig, ['developer']);
+        $controller = new ResumeController($this->twig, $this->template, ['developer']);
 
         $arguments = [
             'courses' => [
@@ -68,7 +68,7 @@ class ResumeControllerTest extends TestCase
 
     public function testRenderThrowsNotFoundException(): void
     {
-        $controller = new ResumeController($this->twig, ['developer']);
+        $controller = new ResumeController($this->twig, $this->template, ['developer']);
 
         $this->expectException(NotFoundException::class);
         $controller->render('unknown-job');

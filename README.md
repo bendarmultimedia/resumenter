@@ -3,18 +3,17 @@ A simple script that allows you to create a resume based on data stored in .json
 You can add different versions of resumes on one template easily print them or export them to PDF. The library comes in handy for applying for various positions, where the priority of skills depends on the job position.
 
 ![thumbnail](https://github.com/bendarmultimedia/resumenter/blob/master/public/img/thumbnail.png?raw=true)
-      
-<center>
 
 ![GitHub Tag](https://img.shields.io/github/v/tag/bendarmultimedia/resumenter?label=version)
 
  ![Git badge](https://img.shields.io/badge/php-seagreen?logo=php&labelColor=indigo)
- ![Git badge](https://img.shields.io/badge/javascript-seagreen?logo=javascript&labelColor=indigo)
- ![Git badge](https://img.shields.io/badge/composer-seagreen?logo=composer&labelColor=indigo)
  ![Git badge](https://img.shields.io/badge/twig-seagreen?logo=twig)
- ![Git badge](https://img.shields.io/badge/tailwind-seagreen?logo=tailwindcss&labelColor=indigo)
+ ![Git badge](https://img.shields.io/badge/composer-seagreen?logo=composer&labelColor=indigo)
+ ![Git badge](https://img.shields.io/badge/javascript-seagreen?logo=javascript&labelColor=indigo)
+ ![Git badge](https://img.shields.io/badge/vite-seagreen?logo=vite&labelColor=indigo)
+ ![Git badge](https://img.shields.io/badge/tailwindcss-seagreen?logo=tailwindcss&labelColor=indigo)
  ![Git badge](https://img.shields.io/badge/puppeteer-seagreen?logo=puppeteer&labelColor=indigo)
-</center>
+
 
 ---
 ## 🛠️ Requirements
@@ -45,6 +44,9 @@ Configure rename ``./.env.example`` to ``./.env`` or create it with proper data
 
 #### Prefix of routes if the app is in sub-path of domain
 ``ROUTE_PREFIX=/resumenter``
+
+#### Filename of template for resume
+``RESUME_TEMPLATE=resume.html.twig``
 
 After setting the options, go to ``./js/`` and call ``npm run build``
 

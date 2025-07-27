@@ -13,9 +13,10 @@ class ResumeController implements ControllerInterface
 
     /**
      * @param Environment $twig
+     * @param string $template
      * @param array $jobs
      */
-    public function __construct(readonly private Environment $twig, private array $jobs = [])
+    public function __construct(readonly private Environment $twig, readonly string $template = 'resume.html.twig', private array $jobs = [])
     {
         $this->jobs[] = '';
     }
@@ -49,7 +50,7 @@ class ResumeController implements ControllerInterface
         $this->sortCourses($data);
         try {
             return $this->twig->render(
-                'resume.html.twig',
+                $this->template,
                 [
                     'cv'  => $data,
                     'env' => $_ENV,

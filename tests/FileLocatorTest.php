@@ -1,6 +1,6 @@
 <?php
 
-namespace Resumenter\Tests;
+namespace Tests;
 
 use PHPUnit\Framework\TestCase;
 use Resumenter\FileLocator;
