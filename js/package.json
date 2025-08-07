@@ -4,7 +4,7 @@
     "type": "git",
     "url": "git+https://github.com/bendarmultimedia/resumenter.git"
   },
-  "type": "module",
+  "type": "commonjs",
   "keywords": [
     "php",
     "tailwind",
