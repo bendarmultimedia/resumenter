@@ -6,7 +6,6 @@ use DateTime;
 use Resumenter\Exception\NotFoundException;
 use Throwable;
 use Twig\Environment;
-use Twig\Loader\FilesystemLoader;
 
 class ResumeController implements ControllerInterface
 {
@@ -52,6 +51,7 @@ class ResumeController implements ControllerInterface
             return $this->twig->render(
                 $this->template,
                 [
+                    'pdf' => $path . ".pdf",
                     'cv'  => $data,
                     'env' => $_ENV,
                 ]);
